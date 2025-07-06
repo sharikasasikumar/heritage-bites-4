@@ -1,0 +1,18 @@
+{
+  "welcome": "Welcome",
+  "login": "Login",
+  "signup": "Sign Up",
+  "recipes": "Recipes",
+  "saved": "Saved",
+  "profile": "Profile",
+  "switchLanguage": "Switch to Arabic",
+  "failedToLoadRecipes": "Failed to load recipes.",
+  "searchRecipes": "Search recipes...",
+  "loadingRecipes": "Loading recipes…",
+  "save": "Save",
+  "loginToYourAccount": "Log in to your account",
+  "email": "Email",
+  "password": "Password",
+  "logIn": "Log In",
+  "noAccount": "Don't have an account? Sign Up"
+}

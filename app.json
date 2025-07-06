@@ -1,0 +1,46 @@
+{
+  "expo": {
+    "name": "HeritageBites2",
+    "slug": "HeritageBites2",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "heritagebites2",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSCameraUsageDescription": "We need access to your camera to scan barcodes."
+      },
+      "jsEngine": "jsc"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff",
+        "jsEngine": "jsc"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      "expo-camera"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "permissions": ["CAMERA"],
+    "jsEngine": "jsc",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "newArchEnabled": false
+  }
+}

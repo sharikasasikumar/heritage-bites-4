@@ -1,0 +1,18 @@
+{
+  "welcome": "مرحبًا",
+  "login": "تسجيل الدخول",
+  "signup": "إنشاء حساب",
+  "recipes": "وصفات",
+  "saved": "المحفوظة",
+  "profile": "الملف الشخصي",
+  "switchLanguage": "التبديل إلى الإنجليزية",
+  "failedToLoadRecipes": "فشل تحميل الوصفات.",
+  "searchRecipes": "Search recipes...",
+  "loadingRecipes": "Loading recipes…",
+  "save": "يحفظ",
+  "loginToYourAccount": "تسجيل الدخول إلى حسابك",
+  "email": "بريد إلكتروني",
+  "password": "كلمة المرور",
+  "logIn": "تسجيل الدخول",
+  "noAccount": "ليس لديك حساب؟ قم بالتسجيل"
+}
