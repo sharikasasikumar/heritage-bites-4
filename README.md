@@ -39,7 +39,7 @@ Screenshots
 
 ![WhatsApp Image 2025-07-07 at 10 21 27 AM (1)](https://github.com/user-attachments/assets/006ed12b-a729-4b62-b521-3baf227d3a8e)
 
-![WhatsApp Image 2025-07-07 at 10 21 28 AM](https://github.com/user-attachments/assets/529dfe65-78b2-4c92-ade2-aeb3e447222c)
+![WhatsApp Image 2025-07-07 at 4 33 01 PM (1)](https://github.com/user-attachments/assets/b17d75aa-f4d7-46e1-8b4d-41e269c4e3a2)
 
 ![WhatsApp Image 2025-07-07 at 10 21 28 AM (1)](https://github.com/user-attachments/assets/336047b2-c4ed-46e6-b266-6ee6ae609a6f)
 
