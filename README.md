@@ -1,3 +1,34 @@
+Welcome to HeritageBites App
+
+Heritage Bites – Scan & Cook Recipes
+
+Heritage Bites is a multilingual React Native mobile app that helps users explore, scan, save, and upload cooking recipes. Following points have been implemented in the app:
+
+    •	API integration
+    •	Navigation and routing
+    •	Language toggling (English & Arabic with RTL support)
+    •	User interaction and state management
+    •	Data persistence
+
+Features Implemented
+
+User Login/Sign-up with mock Firebase auth
+Recipe listing with search
+Save recipe to favorites
+Multilingual UI (English + Arabic)
+Bottom navigation (Recipes, Saved, Barcode Scanner, Profile)
+Barcode scanner to look up meals
+Firebase Firestore
+
+Screenshots
+
+![WhatsApp Image 2025-07-07 at 10 21 27 AM](https://github.com/user-attachments/assets/d9d32aa0-3f03-44db-93b7-db0121b4ffcf)
+![WhatsApp Image 2025-07-07 at 10 21 27 AM (1)](https://github.com/user-attachments/assets/006ed12b-a729-4b62-b521-3baf227d3a8e)
+![WhatsApp Image 2025-07-07 at 10 21 28 AM](https://github.com/user-attachments/assets/529dfe65-78b2-4c92-ade2-aeb3e447222c)
+![WhatsApp Image 2025-07-07 at 10 21 28 AM (1)](https://github.com/user-attachments/assets/336047b2-c4ed-46e6-b266-6ee6ae609a6f)
+![WhatsApp Image 2025-07-07 at 10 21 29 AM](https://github.com/user-attachments/assets/f37d334f-455f-45cb-abde-a26ff22d5781)
+
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
