@@ -14,5 +14,8 @@
   "email": "بريد إلكتروني",
   "password": "كلمة المرور",
   "logIn": "تسجيل الدخول",
-  "noAccount": "ليس لديك حساب؟ قم بالتسجيل"
+  "noAccount": "ليس لديك حساب؟ قم بالتسجيل",
+  "restartRequired": "إعادة التشغيل مطلوبة",
+  "restartMessage": "The app needs to restart to apply changes.",
+  "restartNow": "Restart Now"
 }

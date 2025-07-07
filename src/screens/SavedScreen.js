@@ -1,10 +1,27 @@
-import { useFocusEffect } from "@react-navigation/native";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
+import {
+  collection,
+  getDocs,
+  query,
+  where,
+  deleteDoc,
+  doc,
+} from "firebase/firestore";
 import { useCallback, useState } from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  View,
+  Alert,
+  Pressable,
+} from "react-native";
 import { auth, db } from "../config/firebase";
+
 export default function SavedScreen() {
   const [savedRecipes, setSavedRecipes] = useState([]);
+  const navigation = useNavigation();
 
   useFocusEffect(
     useCallback(() => {
@@ -12,27 +29,19 @@ export default function SavedScreen() {
         try {
           const user = auth.currentUser;
           if (!user) {
-            console.log("⚠️ No user logged in");
+            console.log("No user logged in");
             return;
           }
-
-          console.log("👤 Current User ID:", user.uid);
 
           const savedRef = collection(db, "savedRecipes");
           const q = query(savedRef, where("userId", "==", user.uid));
           const querySnapshot = await getDocs(q);
 
-          console.log("📦 Query Snapshot size:", querySnapshot.size);
+          const recipes = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }));
 
-          const recipes = querySnapshot.docs.map((doc) => {
-            console.log("📄 Fetched doc:", doc.id, doc.data());
-            return {
-              id: doc.id,
-              ...doc.data(),
-            };
-          });
-
-          console.log("🧾 Fetched Recipes:", recipes);
           setSavedRecipes(recipes);
         } catch (error) {
           console.error("Error fetching saved recipes:", error);
@@ -43,17 +52,55 @@ export default function SavedScreen() {
     }, [])
   );
 
+  const handleDeleteRecipe = async (recipeId) => {
+    Alert.alert(
+      "Remove Recipe",
+      "Are you sure you want to remove this recipe?",
+      [
+        { text: "Cancel", style: "cancel" },
+        {
+          text: "Delete",
+          style: "destructive",
+          onPress: async () => {
+            try {
+              await deleteDoc(doc(db, "savedRecipes", recipeId));
+              setSavedRecipes((prev) => prev.filter((r) => r.id !== recipeId));
+            } catch (error) {
+              console.error("Failed to delete recipe:", error);
+              Alert.alert("Error", "Failed to remove the recipe. Try again.");
+            }
+          },
+        },
+      ]
+    );
+  };
+
   const renderItem = ({ item }) => (
-    <View style={styles.card}>
-      <Text style={styles.title}>{item.title}</Text>
-      {item.image && (
-        <Image
-          source={{ uri: item.image }}
-          style={{ width: "100%", height: 150, marginTop: 8, borderRadius: 8 }}
-          resizeMode="cover"
-        />
-      )}
-    </View>
+    <Pressable
+      onPress={() => navigation.navigate("RecipeDetails", { id: item.id })}
+    >
+      <View style={styles.card}>
+        <Text style={styles.title}>{item.title}</Text>
+        {item.image && (
+          <Image
+            source={{ uri: item.image }}
+            style={{
+              width: "100%",
+              height: 150,
+              marginTop: 8,
+              borderRadius: 8,
+            }}
+            resizeMode="cover"
+          />
+        )}
+        <Pressable
+          onPress={() => handleDeleteRecipe(item.id)}
+          style={styles.deleteButton}
+        >
+          <Text style={styles.deleteText}>Remove</Text>
+        </Pressable>
+      </View>
+    </Pressable>
   );
 
   return (
@@ -63,6 +110,11 @@ export default function SavedScreen() {
         data={savedRecipes}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
+        ListEmptyComponent={
+          <View style={styles.emptyContainer}>
+            <Text style={styles.emptyText}>No recipes saved yet.</Text>
+          </View>
+        }
       />
     </View>
   );
@@ -80,4 +132,26 @@ const styles = StyleSheet.create({
     borderColor: "#552900",
   },
   title: { fontSize: 18 },
+  deleteButton: {
+    marginTop: 10,
+    paddingVertical: 6,
+    backgroundColor: "#e53935",
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  deleteText: {
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  emptyContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 50,
+  },
+  emptyText: {
+    fontSize: 16,
+    color: "gray",
+    fontStyle: "italic",
+  },
 });

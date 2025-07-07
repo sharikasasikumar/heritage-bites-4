@@ -9,6 +9,7 @@ import BottomTabs from "./src/navigation/BottomTabs";
 import LoginScreen from "./src/screens/LoginScreen";
 import RecipeDetailsScreen from "./src/screens/RecipeDetails";
 import SignUpScreen from "./src/screens/SignUpScreen";
+import UploadRecipe from "./src/screens/UploadRecipe";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,7 +23,17 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: "#765341",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      >
         {user ? (
           <>
             <Stack.Screen name="Heritage Bites" component={BottomTabs} />
@@ -31,6 +42,7 @@ export default function App() {
               component={RecipeDetailsScreen}
               options={{ title: "Recipe Details" }}
             />
+            <Stack.Screen name="UploadRecipe" component={UploadRecipe} />
           </>
         ) : (
           <>

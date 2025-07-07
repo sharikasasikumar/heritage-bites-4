@@ -14,5 +14,8 @@
   "email": "Email",
   "password": "Password",
   "logIn": "Log In",
-  "noAccount": "Don't have an account? Sign Up"
+  "noAccount": "Don't have an account? Sign Up",
+  "restartRequired": "Restart required.",
+  "restartMessage": "The app needs to restart to apply changes.",
+  "restartNow": "Restart Now"
 }

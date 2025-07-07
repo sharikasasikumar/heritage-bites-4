@@ -92,6 +92,8 @@ export default function RecipesScreen() {
         style={styles.searchBox}
       />
 
+      <Text style={styles.title}>Popular Recipes</Text>
+
       {loading && (
         <View style={styles.center}>
           <ActivityIndicator size="large" />
@@ -124,11 +126,20 @@ export default function RecipesScreen() {
                   />
                   <View style={styles.info}>
                     <Text style={styles.title}>{item.strMeal}</Text>
-                    <Button
-                      title={isSaved ? t("saved") : t("save")}
+                    <Text style={styles.subtitle}>
+                      {item.strArea}, {item.strCategory}
+                    </Text>
+                    <Pressable
                       onPress={() => saveRecipe(item)}
                       disabled={isSaved}
-                    />
+                      style={({ pressed }) => [
+                        styles.saveButton,
+                        isSaved && { backgroundColor: "gray", text: "Saved" },
+                        pressed && !isSaved && { opacity: 0.75 },
+                      ]}
+                    >
+                      <Text style={styles.saveText}>Save</Text>
+                    </Pressable>
                   </View>
                 </View>
               </Pressable>
@@ -153,6 +164,9 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginBottom: 10,
     borderColor: "#c5a587",
+    borderWidth: 1,
+    height: 48,
+    fontSize: 16,
   },
   item: {
     flexDirection: "row",
@@ -177,5 +191,24 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     fontWeight: "bold",
     justifyContent: "center",
+    color: "#2f2f2f",
+  },
+  subtitle: {
+    fontSize: 13,
+    marginBottom: 8,
+    fontWeight: "bold",
+    justifyContent: "center",
+    color: "#2f2f2f",
+  },
+  saveButton: {
+    marginTop: 10,
+    paddingVertical: 6,
+    backgroundColor: "#552900",
+    borderRadius: 5,
+    alignItems: "center",
+  },
+  saveText: {
+    color: "#fff",
+    fontWeight: "bold",
   },
 });
