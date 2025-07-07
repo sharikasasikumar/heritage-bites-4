@@ -2,7 +2,20 @@ Welcome to HeritageBites App
 
 Heritage Bites – Scan & Cook Recipes
 
-Heritage Bites is a multilingual React Native mobile app that helps users explore, scan, save, and upload cooking recipes. Following points have been implemented in the app:
+Heritage Bites is a multilingual React Native mobile app that helps users explore, scan, save, and upload cooking recipes. 
+
+The user can login using existing credentials or create new account through sign up screen with an email id and password.
+Once logged in, the popular recipes are listed.
+The user can click on the recipes and view the detailed instructions.
+
+The user can also save a recipe to check later. The saved recipes will be listed in the Saved bottom navigation button.
+The saved recipes can be removed as well from the saved list.
+
+The barcode scanner looks for a mealId and fetches the recipe from the api.
+
+Upload recipe feature is available in the profile screen. The user can type in the details and upload their own recipe. This recipe is stored in Firebase database.
+
+Following points have been implemented in the app:
 
     •	API integration
     •	Navigation and routing
@@ -23,10 +36,15 @@ Firebase Firestore
 Screenshots
 
 ![WhatsApp Image 2025-07-07 at 10 21 27 AM](https://github.com/user-attachments/assets/d9d32aa0-3f03-44db-93b7-db0121b4ffcf)
+
 ![WhatsApp Image 2025-07-07 at 10 21 27 AM (1)](https://github.com/user-attachments/assets/006ed12b-a729-4b62-b521-3baf227d3a8e)
+
 ![WhatsApp Image 2025-07-07 at 10 21 28 AM](https://github.com/user-attachments/assets/529dfe65-78b2-4c92-ade2-aeb3e447222c)
+
 ![WhatsApp Image 2025-07-07 at 10 21 28 AM (1)](https://github.com/user-attachments/assets/336047b2-c4ed-46e6-b266-6ee6ae609a6f)
+
 ![WhatsApp Image 2025-07-07 at 10 21 29 AM](https://github.com/user-attachments/assets/f37d334f-455f-45cb-abde-a26ff22d5781)
+
 
 
 # Welcome to your Expo app 👋
