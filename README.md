@@ -47,6 +47,8 @@ Screenshots
 
 ![WhatsApp Image 2025-07-07 at 10 21 29 AM](https://github.com/user-attachments/assets/f37d334f-455f-45cb-abde-a26ff22d5781)
 
+![WhatsApp Image 2025-07-07 at 4 36 57 PM](https://github.com/user-attachments/assets/7a605b92-f807-42f9-927d-37fd6569c8e0)
+
 
 
 # Welcome to your Expo app 👋
